@@ -1,0 +1,6 @@
+{
+  "arrowParens": "avoid",
+  "singleQuote": true,
+  "printWidth": 140,
+  "plugins": ["prettier-plugin-organize-attributes", "prettier-plugin-tailwindcss"]
+}

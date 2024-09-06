@@ -1,0 +1,25 @@
+{
+  "name": "@willikers/rxjs",
+  "version": "0.0.0",
+  "exports": {
+    "./debounce-time": {
+      "types": "./types/debounce-time.d.ts",
+      "default": "./src/debounce-time.js"
+    },
+    "./throttle-time": {
+      "types": "./types/throttle-time.d.ts",
+      "default": "./src/throttle-time.js"
+    },
+    "./audit-time": {
+      "types": "./types/audit-time.d.ts",
+      "default": "./src/audit-time.js"
+    }
+  },
+  "dependencies": {
+    "rxjs": "^7.8.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.7"
+  }
+}

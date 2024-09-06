@@ -1,0 +1,29 @@
+{
+  "name": "@willikers/url",
+  "version": "0.0.0",
+  "exports": {
+    "./search-params": {
+      "types": "./types/search-params.d.ts",
+      "default": "./src/search-params.js"
+    },
+    "./pathname": {
+      "types": "./types/pathname.d.ts",
+      "default": "./src/pathname.js"
+    },
+    "./hash": {
+      "types": "./types/hash.d.ts",
+      "default": "./src/hash.js"
+    },
+    "./history": {
+      "types": "./types/history.d.ts",
+      "default": "./src/history.js"
+    }
+  },
+  "dependencies": {
+    "rxjs": "^7.8.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.7"
+  }
+}

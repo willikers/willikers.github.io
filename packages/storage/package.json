@@ -1,0 +1,25 @@
+{
+  "name": "@willikers/storage",
+  "version": "0.0.0",
+  "exports": {
+    "./local": {
+      "types": "./types/local-storage.d.ts",
+      "default": "./src/local-storage.js"
+    },
+    "./session": {
+      "types": "./types/session-storage.d.ts",
+      "default": "./src/session-storage.js"
+    },
+    "./cookies": {
+      "types": "./types/cookies.d.ts",
+      "default": "./src/cookies.js"
+    }
+  },
+  "dependencies": {
+    "rxjs": "^7.8.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.7"
+  }
+}

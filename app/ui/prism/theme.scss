@@ -1,0 +1,151 @@
+.language-jsx {
+  .token {
+    &.keyword {
+      &.control-flow {
+        color: rgb(244 114 182);
+      }
+    }
+    &.maybe-class-name {
+      color: rgb(203, 244, 114);
+    }
+    &.function-variable {
+      &.maybe-class-name {
+        color: rgb(203, 244, 114);
+      }
+    }
+    &.boolean {
+      color: rgb(203, 244, 114);
+    }
+    &.string-property {
+      color: rgb(125 211 252);
+    }
+    &.punctuation {
+      color: rgb(255, 255, 255);
+    }
+    &.operator {
+      color: rgb(168, 97, 230);
+    }
+    &.literal-property {
+      &.property {
+        color: rgb(235, 244, 114);
+      }
+    }
+    &.property-access {
+      color: rgb(203, 244, 114);
+    }
+    &.tag {
+      &.spread {
+        color: rgb(255, 157, 0);
+      }
+      &.punctuation {
+        color: rgb(100 116 139);
+      }
+      &.attr-value {
+        color: rgb(125 211 252);
+      }
+      &.script.language-javascript.parameter {
+        color: rgb(229, 192, 123);
+      }
+    }
+    &.comment {
+      color: rgba(255, 255, 255, 0.3);
+    }
+    &.quote {
+      color: #d4d0ab;
+    }
+    &.variable {
+      color: rgb(244 114 182);
+    }
+    &.template-variable {
+      color: rgb(244 114 182);
+    }
+    &.tag {
+      color: rgb(219, 114, 244);
+    }
+    &.attr {
+      color: #ebf472;
+    }
+    &.function {
+      color: hotpink;
+    }
+    &.name {
+      color: #db72f4;
+    }
+    &.selector-id {
+      color: rgb(244 114 182);
+    }
+    &.selector-class {
+      color: rgb(244 114 182);
+    }
+    &.regexp {
+      color: rgb(244 114 182);
+    }
+    &.deletion {
+      color: rgb(244 114 182);
+    }
+    &.number {
+      color: #f5ab35;
+    }
+    &.built_in {
+      color: #f5ab35;
+    }
+    &.builtin-name {
+      color: #f5ab35;
+    }
+    &.literal {
+      color: #f5ab35;
+    }
+    &.type {
+      color: #f5ab35;
+    }
+    &.attr-name {
+      color: #72f495;
+    }
+    &.meta {
+      color: #f5ab35;
+    }
+    &.link {
+      color: #f5ab35;
+    }
+    &.attribute {
+      color: #ffd700;
+    }
+    &.string {
+      color: rgb(125 211 252);
+    }
+    &.symbol {
+      color: #abe338;
+    }
+    &.bullet {
+      color: #abe338;
+    }
+    &.addition {
+      color: #abe338;
+    }
+    &.title {
+      color: #00e0e0;
+    }
+    &.section {
+      color: #00e0e0;
+    }
+    &.keyword {
+      color: rgb(244 114 182);
+    }
+    &.selector-tag {
+      color: #dcc6e0;
+    }
+    // .hljs {
+    //   display: block;
+    //   overflow-x: auto;
+    //   background: rgb(30 41 59 / var(--tw-bg-opacity));
+    //   color: #f8f8f2;
+    //   padding: 0.5em;
+    // }
+    &.emphasis {
+      font-style: italic;
+    }
+    &.strong {
+      font-weight: bold;
+    }
+  }
+}

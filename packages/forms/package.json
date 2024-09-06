@@ -1,0 +1,17 @@
+{
+  "name": "@willikers/forms",
+  "version": "0.0.0",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./src/index.js"
+    }
+  },
+  "dependencies": {
+    "rxjs": "^7.8.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.7"
+  }
+}

@@ -17,8 +17,21 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout source code
         uses: actions/checkout@v4
+        with:
+          path: src
+          ref: main
+          persist-credentials: false
+
+      - name: Checkout deployment repository
+        uses: actions/checkout@v4
+        with:
+          path: dest
+          ref: main
+          repository: willikers/willikers.github.io
+          # token: ${{ secrets.BOT_TOKEN }}
+          persist-credentials: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -26,26 +39,46 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
+        working-directory: src
         run: npm install
 
       - name: Build
-        run: npm run build --if-present --workspace=app
+        working-directory: src
+        run: npm run build -w app
 
-      # - name: Save artifacts
-      #   uses: actions/upload-pages-artifact@main
-      #   with:
-      #     path: dist/app
-
-      - name: Deploy
-        shell: bash
+      - name: Copy files from source to destination
         run: |
-          # Initialize a new git repository
-          git remote add pages https://github.com/willikers/willikers.github.io.git
-          # Remove all files and folders except .git and dist/app
-          ls | grep -v -E 'dist|\.git' | xargs rm -rf
-          # Move the contents of dist/app to the root directory
-          mv dist/app/* .
-          git add .
-          git commit -m "Deploy application"
-          git push pages main
+          cp -r src/dist/app/* dest/
+
+      - name: Check for new files
+        working-directory: dest
+        id: hasNewFiles
+        run: |
+          git add -A
+          git status --porcelain | wc -l
+          if [[ $(git status --porcelain | wc -l) -gt 0 ]]; then
+            echo "::set-output name=changed::true"
+          else
+            echo "::set-output name=changed::false"
+          fi
+
+      - name: Commit changes
+        if: ${{steps.hasNewFiles.outputs.changed == 'true'}}
+        working-directory: dest
+        run: |
+          git config --global user.name "willikers"
+          git config --global user.email "${{ secrets.BOT_EMAIL }}"
+          git commit -am "Deploy application from ref: ${{ github.ref }}"
+          git push
+        # run: |
+        #   #
+        #   # Initialize a new git repository
+        #   git remote add pages https://github.com/willikers/willikers.github.io.git
+        #   # Remove all files and folders except .git and dist/app
+        #   ls | grep -v -E 'dist|\.git' | xargs rm -rf
+        #   # Move the contents of dist/app to the root directory
+        #   mv dist/app/* .
+        #   git add .
+        #   git commit -m "Deploy application"
+        #   git push pages main
       #   uses: actions/deploy-pages@v4

@@ -1,5 +1,5 @@
-name: Deploy
-run-name: Deploy
+name: Deploy Application
+run-name: deploy-app
 on:
   push:
     branches:
@@ -7,13 +7,21 @@ on:
 
 jobs:
   build:
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url:
+
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
 
@@ -23,5 +31,10 @@ jobs:
       - name: Build
         run: npm run build --if-present --workspace=app
 
+      - name: Save artifacts
+        uses: actions/upload-pages-artifact
+        with:
+          path: dist/app
+
       - name: Deploy
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4

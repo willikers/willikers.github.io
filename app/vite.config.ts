@@ -10,7 +10,7 @@ export default defineConfig({
   },
   resolve: {
     alias: [
-      { find: '@ui', replacement: path.resolve(__dirname, 'ui') },
+      { find: '@ui', replacement: path.resolve(__dirname, 'src/ui') },
       { find: '@examples', replacement: path.resolve(__dirname, 'src/examples') },
       { find: 'prismjs', replacement: path.resolve(__dirname, '../node_modules/prismjs') },
     ],

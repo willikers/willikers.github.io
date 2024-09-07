@@ -21,9 +21,8 @@
 
     "baseUrl": ".",
     "paths": {
-      "@ui/*": ["./ui/*"],
-      "@examples/*": ["./src/examples/*"],
-      "@willikers/*": ["../packages/*"]
+      "@ui/*": ["./src/ui/*"],
+      "@examples/*": ["./src/examples/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "ui/**/*.ts", "ui/**/*.tsx"]

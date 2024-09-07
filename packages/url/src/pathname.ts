@@ -1,5 +1,5 @@
+import { watchInterval } from '@willikers/utilities';
 import { useEffect, useState } from 'react';
-import { watchInterval } from '../../utils/src/watch-interval';
 
 const sub = watchInterval('', () => window.location.pathname);
 

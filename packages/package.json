@@ -6,7 +6,8 @@
   },
   "dependencies": {
     "rxjs": "^7.8.1",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "@willikers/utilities": "0.0.0"
   },
   "devDependencies": {
     "@types/lodash": "^4.17.7"

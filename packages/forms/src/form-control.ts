@@ -1,7 +1,7 @@
+import { useDebounceTime } from '@willikers/rxjs/debounce-time';
 import isEqual from 'lodash/isEqual';
 import { RefObject, useEffect, useRef, useState } from 'react';
 import { firstValueFrom, Observable } from 'rxjs';
-import { useDebounceTime } from '../../rxjs/src/debounce-time';
 
 export type ControlResult = {
   /**

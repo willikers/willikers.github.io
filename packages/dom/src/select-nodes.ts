@@ -1,5 +1,5 @@
+import { HookElement } from '@/globals';
 import { JSXElementConstructor, ReactElement, ReactNode, useEffect, useState } from 'react';
-import { HookElement } from '../../hooks/lib/globals';
 import { isReactElement, isReactElements } from './helpers/is-react-element';
 
 /**

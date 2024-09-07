@@ -17,6 +17,7 @@ export default defineConfig({
   },
   build: {
     outDir: '../dist/app',
+    emptyOutDir: true,
     rollupOptions: {
       output: {
         manualChunks: {
